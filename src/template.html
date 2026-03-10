@@ -172,26 +172,12 @@
     </div>
   </section>
 
-  <!-- ═══ RELEASES ═══ -->
-  <section class="py-24 bg-cyber-gray" id="music">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16 reveal">
-        <h2 class="text-4xl font-title font-black text-white uppercase tracking-widest mb-2">Recent Protocols</h2>
-        <p class="font-mono text-brand/60 uppercase tracking-widest">Digital Audio Transfers</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {{releases}}
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ GALLERY ═══ -->
   <section class="py-24 bg-cyber-black" id="visuals">
     <div class="container mx-auto px-6">
       <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
         <div>
-          <h2 class="text-4xl font-title font-black text-white uppercase tracking-tighter">LIVE_INTERFACES</h2>
-          <p class="font-mono text-cyber-magenta uppercase tracking-widest text-sm">Visual Documentation</p>
+          <h2 class="text-4xl font-title font-black text-white uppercase tracking-tighter">GALERIA DE FOTOS</h2>
         </div>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -204,7 +190,7 @@
   <section class="py-24 bg-cyber-gray">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16 reveal">
-        <h2 class="text-4xl font-title font-black text-white">STREAM_LOGS</h2>
+        <h2 class="text-4xl font-title font-black text-white">VÍDEOS</h2>
       </div>
       <div class="grid lg:grid-cols-2 gap-12">
         {{videos}}
@@ -219,37 +205,17 @@
       <div class="max-w-4xl mx-auto glass-panel p-12 rounded-custom border-cyber-magenta/30">
         <h2 class="text-3xl font-title font-bold text-white mb-6 uppercase tracking-widest">Digital Press Kit</h2>
         <p class="text-gray-400 font-mono mb-10">{{press_kit.description}}</p>
-        <div class="grid md:grid-cols-3 gap-8">
-          <a href="{{press_kit.epk_file}}" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
+        <a href="{{press_kit.epk_file}}" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
             <div class="text-brand mb-4 flex justify-center">
               <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
               </svg>
             </div>
-            <p class="font-mono text-xs text-white uppercase">EPK_ASSETS.ZIP</p>
-            <p class="text-[10px] text-gray-500 mt-2">Images, Logos, Bio</p>
+            <p class="font-mono text-xs text-white uppercase">PressKit</p>
+            <p class="text-[10px] text-gray-500 mt-2">Imagens, Logos, Fotos e Vídeos</p>
           </a>
-          <a href="{{press_kit.tech_rider_file}}" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
-            <div class="text-brand mb-4 flex justify-center">
-              <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-              </svg>
-            </div>
-            <p class="font-mono text-xs text-white uppercase">TECH_RIDER.PDF</p>
-            <p class="text-[10px] text-gray-500 mt-2">Equipment requirements</p>
-          </a>
-          <a href="{{press_kit.video_reel_file}}" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
-            <div class="text-brand mb-4 flex justify-center">
-              <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-              </svg>
-            </div>
-            <p class="font-mono text-xs text-white uppercase">VIDEO_REEL.MP4</p>
-            <p class="text-[10px] text-gray-500 mt-2">Highlight montage</p>
-          </a>
-        </div>
         <a href="{{press_kit.epk_file}}" download class="inline-block mt-12 px-12 py-4 bg-transparent border border-brand text-brand font-title font-bold rounded-custom hover:bg-brand hover:text-black transition-all animate-pulse-glow">
-          DOWNLOAD COMPLETE PACK
+          ACESSAR PRESSKIT
         </a>
       </div>
     </div>
@@ -261,7 +227,6 @@
       <div class="grid lg:grid-cols-2 gap-16">
         <div class="reveal">
           <h2 class="text-4xl font-title font-black text-white mb-6">CONTATO</h2>
-          <p class="text-gray-400 font-mono mb-8 max-w-md">{{contact.intro}}</p>
           <div class="space-y-4">
             <div class="flex items-center gap-4 text-brand">
               <div class="w-10 h-10 glass-panel flex items-center justify-center rounded-custom">
