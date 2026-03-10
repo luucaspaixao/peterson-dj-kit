@@ -92,10 +92,9 @@
   <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10 px-6 py-4 flex justify-between items-center">
     <div class="text-brand font-title font-black text-xl tracking-tighter">{{site.title}}</div>
     <div class="hidden md:flex gap-8 font-mono text-sm uppercase tracking-widest text-gray-400">
-      <a class="hover:text-brand transition-colors" href="#about">// ABOUT</a>
-      <a class="hover:text-brand transition-colors" href="#music">// MUSIC</a>
-      <a class="hover:text-brand transition-colors" href="#visuals">// VISUALS</a>
-      <a class="hover:text-brand transition-colors" href="#booking">// BOOKING</a>
+      <a class="hover:text-brand transition-colors" href="#sobre">// SOBRE</a>
+      <a class="hover:text-brand transition-colors" href="#galeria">// GALERIA</a>
+      <a class="hover:text-brand transition-colors" href="#contato">// CONTATO</a>
     </div>
     <button class="md:hidden text-brand" id="mobile-menu-btn">
       <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,10 +105,9 @@
 
   <!-- Mobile Menu -->
   <div class="fixed inset-0 z-40 bg-cyber-black/95 flex flex-col items-center justify-center gap-8 hidden" id="mobile-menu">
-    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#about" onclick="closeMobileMenu()">// ABOUT</a>
-    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#music" onclick="closeMobileMenu()">// MUSIC</a>
-    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#visuals" onclick="closeMobileMenu()">// VISUALS</a>
-    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#booking" onclick="closeMobileMenu()">// BOOKING</a>
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#sobre" onclick="closeMobileMenu()">// SOBRE</a>
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#galeria" onclick="closeMobileMenu()">// GALERIA</a>
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#contato" onclick="closeMobileMenu()">// CONTATO</a>
   </div>
 
   <!-- ═══ HERO ═══ -->
@@ -126,10 +124,10 @@
         {{site.tagline}}
       </p>
       <div class="flex flex-col md:flex-row gap-6 justify-center">
-        <a class="px-10 py-4 bg-brand text-cyber-black font-title font-bold rounded-custom hover:bg-white transition-all duration-300 animate-pulse-glow" href="#music">
+        <a class="px-10 py-4 bg-brand text-cyber-black font-title font-bold rounded-custom hover:bg-white transition-all duration-300 animate-pulse-glow" href="#galeria">
           {{site.hero_cta_primary}}
         </a>
-        <a class="px-10 py-4 border border-white/20 hover:border-brand/60 font-title font-bold rounded-custom transition-all duration-300" href="#press">
+        <a class="px-10 py-4 border border-white/20 hover:border-brand/60 font-title font-bold rounded-custom transition-all duration-300" href="#presskit">
           {{site.hero_cta_secondary}}
         </a>
       </div>
@@ -143,7 +141,7 @@
   </section>
 
   <!-- ═══ ABOUT ═══ -->
-  <section class="py-24 bg-cyber-black relative overflow-hidden" id="about">
+  <section class="py-24 bg-cyber-black relative overflow-hidden" id="sobre">
     <div class="container mx-auto px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <!-- Photo with Neon Frame -->
@@ -173,7 +171,7 @@
   </section>
 
   <!-- ═══ GALLERY ═══ -->
-  <section class="py-24 bg-cyber-black" id="visuals">
+  <section class="py-24 bg-cyber-black" id="galeria">
     <div class="container mx-auto px-6">
       <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
         <div>
@@ -199,13 +197,13 @@
   </section>
 
   <!-- ═══ PRESS KIT ═══ -->
-  <section class="py-24 bg-cyber-black relative overflow-hidden" id="press">
+  <section class="py-24 bg-cyber-black relative overflow-hidden" id="pressikt">
     <div class="absolute inset-0 cyber-grid opacity-10"></div>
     <div class="container mx-auto px-6 relative z-10 text-center">
       <div class="max-w-4xl mx-auto glass-panel p-12 rounded-custom border-cyber-magenta/30">
         <h2 class="text-3xl font-title font-bold text-white mb-6 uppercase tracking-widest">Digital Press Kit</h2>
         <p class="text-gray-400 font-mono mb-10">{{press_kit.description}}</p>
-        <a href="{{press_kit.epk_file}}" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
+        <a target="_blank" href="{{press_kit.epk_file}}" class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
             <div class="text-brand mb-4 flex justify-center">
               <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
@@ -214,7 +212,7 @@
             <p class="font-mono text-xs text-white uppercase">PressKit</p>
             <p class="text-[10px] text-gray-500 mt-2">Imagens, Logos, Fotos e Vídeos</p>
           </a>
-        <a href="{{press_kit.epk_file}}" download class="inline-block mt-12 px-12 py-4 bg-transparent border border-brand text-brand font-title font-bold rounded-custom hover:bg-brand hover:text-black transition-all animate-pulse-glow">
+        <a target="_blank" href="{{press_kit.epk_file}}" class="inline-block mt-12 px-12 py-4 bg-transparent border border-brand text-brand font-title font-bold rounded-custom hover:bg-brand hover:text-black transition-all animate-pulse-glow">
           ACESSAR PRESSKIT
         </a>
       </div>
@@ -222,7 +220,7 @@
   </section>
 
   <!-- ═══ CONTACT / BOOKING ═══ -->
-  <section class="py-24 bg-cyber-gray" id="booking">
+  <section class="py-24 bg-cyber-gray" id="contato">
     <div class="container mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16">
         <div class="reveal">
@@ -249,7 +247,7 @@
               <input class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="SEU NOME" type="text" name="name" required />
               <input class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="CONTATO (Whatsapp ou E-mail)" type="email" name="email" required />
             </div>
-            <textarea class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="Sua mensagem" rows="4" name="message"></textarea>
+            <textarea class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="SUA MENSAGEM" rows="4" name="message"></textarea>
             <button class="w-full py-4 bg-white/5 border border-white/20 text-white font-title font-bold rounded-custom hover:bg-brand hover:text-black transition-all" type="submit">
               Enviar
             </button>
