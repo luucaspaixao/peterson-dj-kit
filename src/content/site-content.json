@@ -1,8 +1,8 @@
 {
   "contact": {
     "intro": "For booking inquiries, collaborations, or encrypted messages. Secure terminal transmission active.",
-    "email": "booking@cybercore.audio",
-    "instagram": "@cybercore_dj"
+    "email": "pedro_luiss@live.com",
+    "instagram": "@peter_son_music"
   },
   "social_links": {
     "soundcloud": "https://soundcloud.com/cybercore",
@@ -13,49 +13,12 @@
   "site": {
     "title": "DJ PETER SON",
     "tagline": "\"Proporcionar uma experiência de imersão sonora única, unindo técnica refinada e sensibilidade artística para transformar cada set em um momento memorável de conexão entre o público e a música eletrônica.\"",
-    "badge": "Establishment Protocol: Active",
+    "badge": " ",
     "hero_cta_primary": "Mídias",
     "hero_cta_secondary": "!Presskit",
     "bpm_display": "128.00"
   },
-  "releases": [
-    {
-      "title": "NEON_NIGHTS.wav",
-      "type": "EP",
-      "year": "2024",
-      "label": "HYPER_RECORDS",
-      "cover": "/images/releases/neon-nights.jpg",
-      "spotify_url": "#",
-      "soundcloud_url": "#"
-    },
-    {
-      "title": "VOID_WALKER.m4a",
-      "type": "SINGLE",
-      "year": "2024",
-      "label": "INDEPENDENT",
-      "cover": "/images/releases/void-walker.jpg",
-      "spotify_url": "#",
-      "soundcloud_url": "#"
-    },
-    {
-      "title": "DATA_STREAM.wav",
-      "type": "REMIX",
-      "year": "2023",
-      "label": "CYBER_CORP",
-      "cover": "/images/releases/data-stream.jpg",
-      "spotify_url": "#",
-      "soundcloud_url": "#"
-    },
-    {
-      "title": "GLITCH_GHOST.bin",
-      "type": "EP",
-      "year": "2023",
-      "label": "VIRTUAL_REALITY",
-      "cover": "/images/releases/glitch-ghost.jpg",
-      "spotify_url": "#",
-      "soundcloud_url": "#"
-    }
-  ],
+  "releases": [],
   "about": {
     "section_title": "SOBRE MIM",
     "photo": "https://i.ibb.co/spQwp2p8/Peter-02.jpg",
@@ -69,20 +32,12 @@
   },
   "gallery": [
     {
-      "image": "/images/gallery/photo-01.jpg",
-      "caption": "LOC: SHIBUYA_DISTRICT"
+      "image": "/images/fbdaed0c-08c9-45fd-b218-cb885a9d667f-1-1-.jpg",
+      "caption": " "
     },
     {
-      "image": "/images/gallery/photo-02.jpg",
-      "caption": "EQUIP: NEURAL_LINK_V2"
-    },
-    {
-      "image": "/images/gallery/photo-03.jpg",
-      "caption": "ENTITY_COUNT: 4500"
-    },
-    {
-      "image": "/images/gallery/photo-04.jpg",
-      "caption": "FREQ: 532NM_GREEN"
+      "caption": " ",
+      "image": " "
     }
   ],
   "videos": [
@@ -98,7 +53,7 @@
     }
   ],
   "press_kit": {
-    "description": "Access high-resolution assets, technical riders, and biography for event promoters and press outlets.",
+    "description": " ",
     "epk_file": "/downloads/EPK_ASSETS.zip",
     "tech_rider_file": "/downloads/TECH_RIDER.pdf",
     "video_reel_file": "/downloads/VIDEO_REEL.mp4"
