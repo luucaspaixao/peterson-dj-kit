@@ -1,18 +1,22 @@
 {
+  "contact": {
+    "intro": "For booking inquiries, collaborations, or encrypted messages. Secure terminal transmission active.",
+    "email": "booking@cybercore.audio",
+    "instagram": "@cybercore_dj"
+  },
+  "social_links": {
+    "soundcloud": "https://soundcloud.com/cybercore",
+    "spotify": "https://open.spotify.com/artist/REPLACE_ME",
+    "instagram": "https://instagram.com/cybercore_dj",
+    "twitch": "https://twitch.tv/cybercore"
+  },
   "site": {
-    "title": "CYBER_CORE",
+    "title": "DJ PETER_SON",
     "tagline": "Translating Binary to Basslines",
     "badge": "Establishment Protocol: Active",
     "hero_cta_primary": "ENTER THE GRID",
     "hero_cta_secondary": "EPK MATERIALS",
     "bpm_display": "128.00"
-  },
-  "about": {
-    "section_title": "THE ARCHITECT",
-    "photo": "/images/dj-portrait.jpg",
-    "bio_paragraph_1": "Emerging from the digital underground of 20XX, CYBER_CORE bridges the gap between synthetic soundscapes and visceral human emotion. Specializing in high-fidelity industrial techno and neon-drenched synthwave.",
-    "bio_paragraph_2": "Having headlined the Neo-Tokyo Redline Festival and the Underground London Grid, their sound is a relentless exploration of frequency and rhythm. No two sets are identical; every performance is a live-patching experiment in auditory immersion.",
-    "genres": ["INDUSTRIAL", "TECHNO", "GLITCH"]
   },
   "releases": [
     {
@@ -52,6 +56,17 @@
       "soundcloud_url": "#"
     }
   ],
+  "about": {
+    "section_title": "THE ARCHITECT",
+    "photo": "/images/property-image.jpg",
+    "bio_paragraph_1": "Emerging from the digital underground of 20XX, CYBER_CORE bridges the gap between synthetic soundscapes and visceral human emotion. Specializing in high-fidelity industrial techno and neon-drenched synthwave.",
+    "bio_paragraph_2": "Having headlined the Neo-Tokyo Redline Festival and the Underground London Grid, their sound is a relentless exploration of frequency and rhythm. No two sets are identical; every performance is a live-patching experiment in auditory immersion.",
+    "genres": [
+      "INDUSTRIAL",
+      "TECHNO",
+      "GLITCH"
+    ]
+  },
   "gallery": [
     {
       "image": "/images/gallery/photo-01.jpg",
@@ -87,17 +102,6 @@
     "epk_file": "/downloads/EPK_ASSETS.zip",
     "tech_rider_file": "/downloads/TECH_RIDER.pdf",
     "video_reel_file": "/downloads/VIDEO_REEL.mp4"
-  },
-  "contact": {
-    "intro": "For booking inquiries, collaborations, or encrypted messages. Secure terminal transmission active.",
-    "email": "booking@cybercore.audio",
-    "instagram": "@cybercore_dj"
-  },
-  "social_links": {
-    "soundcloud": "https://soundcloud.com/cybercore",
-    "spotify": "https://open.spotify.com/artist/REPLACE_ME",
-    "instagram": "https://instagram.com/cybercore_dj",
-    "twitch": "https://twitch.tv/cybercore"
   },
   "footer": {
     "copyright": "© 2024 CYBER_CORE // ALL RIGHTS RESERVED. ENCRYPTED_SITE_V1.0"
