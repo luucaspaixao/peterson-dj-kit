@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>CYBER_CORE // Digital Press Kit</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet" />
+  <!-- Netlify Identity Widget (necessário para login do admin) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0df2f2',
+            cyber: {
+              black: '#0a0a0f',
+              gray: '#1a1a24',
+              accent: '#0df2f2',
+              magenta: '#ff00ff',
+              purple: '#7000ff'
+            }
+          },
+          fontFamily: {
+            title: ['Orbitron', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            mono: ['Space Grotesk', 'sans-serif']
+          },
+          borderRadius: {
+            'custom': '8px'
+          },
+          animation: {
+            'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 5px #0df2f2, 0 0 10px #0df2f2' },
+              '50%': { boxShadow: '0 0 20px #0df2f2, 0 0 30px #0df2f2' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0a0a0f;
+      color: #e2e8f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .cyber-grid {
+      background-image: linear-gradient(rgba(13, 242, 242, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(13, 242, 242, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .glass-panel {
+      background: rgba(26, 26, 36, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(13, 242, 242, 0.2);
+    }
+    .glow-hover:hover {
+      box-shadow: 0 0 15px rgba(13, 242, 242, 0.4);
+      border-color: rgba(13, 242, 242, 0.8);
+      transform: translateY(-2px);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-body selection:bg-brand selection:text-black">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10 px-6 py-4 flex justify-between items-center">
+    <div class="text-brand font-title font-black text-xl tracking-tighter">CYBER_CORE</div>
+    <div class="hidden md:flex gap-8 font-mono text-sm uppercase tracking-widest text-gray-400">
+      <a class="hover:text-brand transition-colors" href="#about">// ABOUT</a>
+      <a class="hover:text-brand transition-colors" href="#music">// MUSIC</a>
+      <a class="hover:text-brand transition-colors" href="#visuals">// VISUALS</a>
+      <a class="hover:text-brand transition-colors" href="#booking">// BOOKING</a>
+    </div>
+    <button class="md:hidden text-brand" id="mobile-menu-btn">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="fixed inset-0 z-40 bg-cyber-black/95 flex flex-col items-center justify-center gap-8 hidden" id="mobile-menu">
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#about" onclick="closeMobileMenu()">// ABOUT</a>
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#music" onclick="closeMobileMenu()">// MUSIC</a>
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#visuals" onclick="closeMobileMenu()">// VISUALS</a>
+    <a class="font-mono text-2xl text-gray-400 hover:text-brand transition-colors" href="#booking" onclick="closeMobileMenu()">// BOOKING</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="relative min-h-screen flex items-center justify-center cyber-grid overflow-hidden pt-20">
+    <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-cyber-black"></div>
+    <div class="container mx-auto px-6 z-10 text-center">
+      <div class="mb-6 inline-block py-1 px-4 border border-brand/40 bg-brand/5 text-brand font-mono text-xs uppercase tracking-[0.3em] rounded-custom">
+        Establishment Protocol: Active
+      </div>
+      <h1 class="text-6xl md:text-9xl font-title font-black text-white mb-4 tracking-tighter leading-none">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-cyber-purple">CYBER_CORE</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-mono text-brand/80 max-w-2xl mx-auto mb-10 uppercase tracking-widest">
+        Translating Binary to Basslines
+      </p>
+      <div class="flex flex-col md:flex-row gap-6 justify-center">
+        <a class="px-10 py-4 bg-brand text-cyber-black font-title font-bold rounded-custom hover:bg-white transition-all duration-300 animate-pulse-glow" href="#music">
+          ENTER THE GRID
+        </a>
+        <a class="px-10 py-4 border border-white/20 hover:border-brand/60 font-title font-bold rounded-custom transition-all duration-300" href="#press">
+          EPK MATERIALS
+        </a>
+      </div>
+    </div>
+    <!-- Decorative -->
+    <div class="absolute bottom-10 left-10 hidden lg:block opacity-20 font-mono text-[10px] text-brand space-y-1">
+      <p>SYSTEM_STATUS: ONLINE</p>
+      <p>BPM_SYNC: 128.00</p>
+      <p>LATENCY: 0.2MS</p>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="py-24 bg-cyber-black relative overflow-hidden" id="about">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Photo with Neon Frame -->
+        <div class="relative reveal group">
+          <div class="absolute -inset-4 border border-brand/30 rounded-custom translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform"></div>
+          <div class="absolute -inset-4 border border-cyber-magenta/30 rounded-custom -translate-x-4 -translate-y-4 group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform"></div>
+          <div class="relative overflow-hidden rounded-custom aspect-square">
+            <img alt="DJ Portrait" class="w-full h-full object-cover" src="/images/dj-portrait.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-transparent to-transparent"></div>
+          </div>
+        </div>
+        <!-- Bio -->
+        <div class="reveal" style="transition-delay: 200ms;">
+          <h2 class="text-4xl md:text-5xl font-title font-black text-white mb-8 border-l-4 border-brand pl-6">
+            THE ARCHITECT
+          </h2>
+          <div class="space-y-6 text-gray-400 leading-relaxed font-mono">
+            <p>Emerging from the digital underground of 20XX, CYBER_CORE bridges the gap between synthetic soundscapes and visceral human emotion. Specializing in high-fidelity industrial techno and neon-drenched synthwave.</p>
+            <p>Having headlined the Neo-Tokyo Redline Festival and the Underground London Grid, their sound is a relentless exploration of frequency and rhythm. No two sets are identical; every performance is a live-patching experiment in auditory immersion.</p>
+            <div class="flex gap-4 pt-4">
+              <div class="px-4 py-2 bg-brand/10 border border-brand/20 rounded-custom text-xs text-brand">INDUSTRIAL</div>
+<div class="px-4 py-2 bg-cyber-magenta/10 border border-cyber-magenta/20 rounded-custom text-xs text-cyber-magenta">TECHNO</div>
+<div class="px-4 py-2 bg-cyber-purple/10 border border-cyber-purple/20 rounded-custom text-xs text-cyber-purple">GLITCH</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RELEASES ═══ -->
+  <section class="py-24 bg-cyber-gray" id="music">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl font-title font-black text-white uppercase tracking-widest mb-2">Recent Protocols</h2>
+        <p class="font-mono text-brand/60 uppercase tracking-widest">Digital Audio Transfers</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+    <div class="reveal glass-panel p-4 rounded-custom glow-hover transition-all group" style="transition-delay: 100ms;">
+      <div class="relative mb-4 aspect-square overflow-hidden rounded-custom">
+        <img alt="NEON_NIGHTS.wav Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/images/releases/neon-nights.jpg" />
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-brand/20 backdrop-blur-sm transition-opacity">
+          <button class="w-12 h-12 bg-brand text-black rounded-full flex items-center justify-center">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="font-title text-lg text-white mb-1">NEON_NIGHTS.wav</h3>
+      <p class="text-xs font-mono text-brand/60 mb-4 uppercase">EP • 2024 • HYPER_RECORDS</p>
+      <div class="flex gap-4 text-gray-400">
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.973 14.408c-.197.32-.612.423-.93.226-2.522-1.54-5.7-1.89-9.44-1.033-.362.08-.72-.14-.8-.503-.08-.363.14-.72.502-.8 4.102-.937 7.625-.538 10.462 1.196.32.197.424.612.227.931zm1.325-2.716c-.247.404-.775.534-1.18.286-2.887-1.776-7.288-2.288-10.7-1.25-.458.138-.934-.127-1.072-.586-.137-.458.127-.934.586-1.072 3.89-1.18 8.74-.616 12.08 1.442.404.248.535.776.286 1.18zm.114-2.8c-3.463-2.056-9.176-2.246-12.485-1.242-.53.16-1.09-.142-1.25-.672-.16-.53.142-1.09.672-1.25 3.805-1.155 10.11-.93 14.103 1.44.477.283.633.896.35 1.373-.284.477-.897.633-1.373.352h-.017z"></path></svg></a>
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3z"></path></svg></a>
+      </div>
+    </div>
+  
+
+    <div class="reveal glass-panel p-4 rounded-custom glow-hover transition-all group" style="transition-delay: 200ms;">
+      <div class="relative mb-4 aspect-square overflow-hidden rounded-custom">
+        <img alt="VOID_WALKER.m4a Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/images/releases/void-walker.jpg" />
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-brand/20 backdrop-blur-sm transition-opacity">
+          <button class="w-12 h-12 bg-brand text-black rounded-full flex items-center justify-center">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="font-title text-lg text-white mb-1">VOID_WALKER.m4a</h3>
+      <p class="text-xs font-mono text-brand/60 mb-4 uppercase">SINGLE • 2024 • INDEPENDENT</p>
+      <div class="flex gap-4 text-gray-400">
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.973 14.408c-.197.32-.612.423-.93.226-2.522-1.54-5.7-1.89-9.44-1.033-.362.08-.72-.14-.8-.503-.08-.363.14-.72.502-.8 4.102-.937 7.625-.538 10.462 1.196.32.197.424.612.227.931zm1.325-2.716c-.247.404-.775.534-1.18.286-2.887-1.776-7.288-2.288-10.7-1.25-.458.138-.934-.127-1.072-.586-.137-.458.127-.934.586-1.072 3.89-1.18 8.74-.616 12.08 1.442.404.248.535.776.286 1.18zm.114-2.8c-3.463-2.056-9.176-2.246-12.485-1.242-.53.16-1.09-.142-1.25-.672-.16-.53.142-1.09.672-1.25 3.805-1.155 10.11-.93 14.103 1.44.477.283.633.896.35 1.373-.284.477-.897.633-1.373.352h-.017z"></path></svg></a>
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3z"></path></svg></a>
+      </div>
+    </div>
+  
+
+    <div class="reveal glass-panel p-4 rounded-custom glow-hover transition-all group" style="transition-delay: 300ms;">
+      <div class="relative mb-4 aspect-square overflow-hidden rounded-custom">
+        <img alt="DATA_STREAM.wav Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/images/releases/data-stream.jpg" />
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-brand/20 backdrop-blur-sm transition-opacity">
+          <button class="w-12 h-12 bg-brand text-black rounded-full flex items-center justify-center">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="font-title text-lg text-white mb-1">DATA_STREAM.wav</h3>
+      <p class="text-xs font-mono text-brand/60 mb-4 uppercase">REMIX • 2023 • CYBER_CORP</p>
+      <div class="flex gap-4 text-gray-400">
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.973 14.408c-.197.32-.612.423-.93.226-2.522-1.54-5.7-1.89-9.44-1.033-.362.08-.72-.14-.8-.503-.08-.363.14-.72.502-.8 4.102-.937 7.625-.538 10.462 1.196.32.197.424.612.227.931zm1.325-2.716c-.247.404-.775.534-1.18.286-2.887-1.776-7.288-2.288-10.7-1.25-.458.138-.934-.127-1.072-.586-.137-.458.127-.934.586-1.072 3.89-1.18 8.74-.616 12.08 1.442.404.248.535.776.286 1.18zm.114-2.8c-3.463-2.056-9.176-2.246-12.485-1.242-.53.16-1.09-.142-1.25-.672-.16-.53.142-1.09.672-1.25 3.805-1.155 10.11-.93 14.103 1.44.477.283.633.896.35 1.373-.284.477-.897.633-1.373.352h-.017z"></path></svg></a>
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3z"></path></svg></a>
+      </div>
+    </div>
+  
+
+    <div class="reveal glass-panel p-4 rounded-custom glow-hover transition-all group" style="transition-delay: 400ms;">
+      <div class="relative mb-4 aspect-square overflow-hidden rounded-custom">
+        <img alt="GLITCH_GHOST.bin Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/images/releases/glitch-ghost.jpg" />
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-brand/20 backdrop-blur-sm transition-opacity">
+          <button class="w-12 h-12 bg-brand text-black rounded-full flex items-center justify-center">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="font-title text-lg text-white mb-1">GLITCH_GHOST.bin</h3>
+      <p class="text-xs font-mono text-brand/60 mb-4 uppercase">EP • 2023 • VIRTUAL_REALITY</p>
+      <div class="flex gap-4 text-gray-400">
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.973 14.408c-.197.32-.612.423-.93.226-2.522-1.54-5.7-1.89-9.44-1.033-.362.08-.72-.14-.8-.503-.08-.363.14-.72.502-.8 4.102-.937 7.625-.538 10.462 1.196.32.197.424.612.227.931zm1.325-2.716c-.247.404-.775.534-1.18.286-2.887-1.776-7.288-2.288-10.7-1.25-.458.138-.934-.127-1.072-.586-.137-.458.127-.934.586-1.072 3.89-1.18 8.74-.616 12.08 1.442.404.248.535.776.286 1.18zm.114-2.8c-3.463-2.056-9.176-2.246-12.485-1.242-.53.16-1.09-.142-1.25-.672-.16-.53.142-1.09.672-1.25 3.805-1.155 10.11-.93 14.103 1.44.477.283.633.896.35 1.373-.284.477-.897.633-1.373.352h-.017z"></path></svg></a>
+        <a class="hover:text-brand transition-colors" href="#" target="_blank" rel="noopener"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3z"></path></svg></a>
+      </div>
+    </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section class="py-24 bg-cyber-black" id="visuals">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+        <div>
+          <h2 class="text-4xl font-title font-black text-white uppercase tracking-tighter">LIVE_INTERFACES</h2>
+          <p class="font-mono text-cyber-magenta uppercase tracking-widest text-sm">Visual Documentation</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+    <div class="reveal relative overflow-hidden rounded-custom aspect-[3/4] group " style="transition-delay: 100ms;">
+      <img alt="Live Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/gallery/photo-01.jpg" />
+      <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-transparent to-transparent opacity-80"></div>
+      <div class="absolute bottom-4 left-4 font-mono text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">LOC: SHIBUYA_DISTRICT</div>
+    </div>
+  
+
+    <div class="reveal relative overflow-hidden rounded-custom aspect-[3/4] group " style="transition-delay: 200ms;">
+      <img alt="Live Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/gallery/photo-02.jpg" />
+      <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-transparent to-transparent opacity-80"></div>
+      <div class="absolute bottom-4 left-4 font-mono text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">EQUIP: NEURAL_LINK_V2</div>
+    </div>
+  
+
+    <div class="reveal relative overflow-hidden rounded-custom aspect-[3/4] group md:translate-y-8" style="transition-delay: 300ms;">
+      <img alt="Live Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/gallery/photo-03.jpg" />
+      <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-transparent to-transparent opacity-80"></div>
+      <div class="absolute bottom-4 left-4 font-mono text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">ENTITY_COUNT: 4500</div>
+    </div>
+  
+
+    <div class="reveal relative overflow-hidden rounded-custom aspect-[3/4] group md:translate-y-8" style="transition-delay: 400ms;">
+      <img alt="Live Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/gallery/photo-04.jpg" />
+      <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-transparent to-transparent opacity-80"></div>
+      <div class="absolute bottom-4 left-4 font-mono text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">FREQ: 532NM_GREEN</div>
+    </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VIDEOS ═══ -->
+  <section class="py-24 bg-cyber-gray">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl font-title font-black text-white">STREAM_LOGS</h2>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-12">
+        
+    <div class="reveal glass-panel p-2 rounded-custom glow-hover" style="transition-delay: 100ms;">
+      <div class="aspect-video bg-black rounded-custom flex items-center justify-center relative overflow-hidden">
+        <img alt="RE_CODE FESTIVAL 2024" class="absolute inset-0 w-full h-full object-cover opacity-50" src="/images/videos/recode-festival.jpg" />
+        <div class="z-10 text-center">
+          <a href="https://youtube.com/watch?v=REPLACE_ME" target="_blank" rel="noopener" class="w-20 h-20 border-2 border-brand text-brand rounded-full flex items-center justify-center hover:bg-brand hover:text-black transition-all mb-4 mx-auto">
+            <svg class="h-10 w-10 ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </a>
+          <p class="font-title text-sm tracking-widest text-white">RE_CODE FESTIVAL 2024</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="reveal glass-panel p-2 rounded-custom glow-hover" style="transition-delay: 200ms;">
+      <div class="aspect-video bg-black rounded-custom flex items-center justify-center relative overflow-hidden">
+        <img alt="BLUEPRINT UNDERGROUND 08" class="absolute inset-0 w-full h-full object-cover opacity-50" src="/images/videos/blueprint-underground.jpg" />
+        <div class="z-10 text-center">
+          <a href="https://youtube.com/watch?v=REPLACE_ME" target="_blank" rel="noopener" class="w-20 h-20 border-2 border-brand text-brand rounded-full flex items-center justify-center hover:bg-brand hover:text-black transition-all mb-4 mx-auto">
+            <svg class="h-10 w-10 ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </a>
+          <p class="font-title text-sm tracking-widest text-white">BLUEPRINT UNDERGROUND 08</p>
+        </div>
+      </div>
+    </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRESS KIT ═══ -->
+  <section class="py-24 bg-cyber-black relative overflow-hidden" id="press">
+    <div class="absolute inset-0 cyber-grid opacity-10"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <div class="max-w-4xl mx-auto glass-panel p-12 rounded-custom border-cyber-magenta/30">
+        <h2 class="text-3xl font-title font-bold text-white mb-6 uppercase tracking-widest">Digital Press Kit</h2>
+        <p class="text-gray-400 font-mono mb-10">Access high-resolution assets, technical riders, and biography for event promoters and press outlets.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="/downloads/EPK_ASSETS.zip" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
+            <div class="text-brand mb-4 flex justify-center">
+              <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <p class="font-mono text-xs text-white uppercase">EPK_ASSETS.ZIP</p>
+            <p class="text-[10px] text-gray-500 mt-2">Images, Logos, Bio</p>
+          </a>
+          <a href="/downloads/TECH_RIDER.pdf" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
+            <div class="text-brand mb-4 flex justify-center">
+              <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <p class="font-mono text-xs text-white uppercase">TECH_RIDER.PDF</p>
+            <p class="text-[10px] text-gray-500 mt-2">Equipment requirements</p>
+          </a>
+          <a href="/downloads/VIDEO_REEL.mp4" download class="p-6 border border-white/10 rounded-custom hover:bg-white/5 transition-all cursor-pointer group block">
+            <div class="text-brand mb-4 flex justify-center">
+              <svg class="h-10 w-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <p class="font-mono text-xs text-white uppercase">VIDEO_REEL.MP4</p>
+            <p class="text-[10px] text-gray-500 mt-2">Highlight montage</p>
+          </a>
+        </div>
+        <a href="/downloads/EPK_ASSETS.zip" download class="inline-block mt-12 px-12 py-4 bg-transparent border border-brand text-brand font-title font-bold rounded-custom hover:bg-brand hover:text-black transition-all animate-pulse-glow">
+          DOWNLOAD COMPLETE PACK
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT / BOOKING ═══ -->
+  <section class="py-24 bg-cyber-gray" id="booking">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div class="reveal">
+          <h2 class="text-4xl font-title font-black text-white mb-6">INITIATE_CONTACT</h2>
+          <p class="text-gray-400 font-mono mb-8 max-w-md">For booking inquiries, collaborations, or encrypted messages. Secure terminal transmission active.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 text-brand">
+              <div class="w-10 h-10 glass-panel flex items-center justify-center rounded-custom">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+              </div>
+              <a href="mailto:booking@cybercore.audio" class="font-mono text-sm hover:underline">booking@cybercore.audio</a>
+            </div>
+            <div class="flex items-center gap-4 text-cyber-magenta">
+              <div class="w-10 h-10 glass-panel flex items-center justify-center rounded-custom">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+              </div>
+              <span class="font-mono text-sm">@cybercore_dj</span>
+            </div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 200ms;">
+          <form class="space-y-4" name="booking" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="booking" />
+            <div class="grid md:grid-cols-2 gap-4">
+              <input class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="ENTITY_NAME" type="text" name="name" required />
+              <input class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="CONTACT_LINK" type="email" name="email" required />
+            </div>
+            <select class="w-full bg-black/40 border-white/10 text-gray-500 font-mono rounded-custom focus:border-brand focus:ring-brand" name="subject">
+              <option>BOOKING_QUERY</option>
+              <option>PRESS_REQUEST</option>
+              <option>COLLAB_PROPOSAL</option>
+            </select>
+            <textarea class="w-full bg-black/40 border-white/10 text-white font-mono rounded-custom focus:border-brand focus:ring-brand" placeholder="TRANSMISSION_CONTENT" rows="4" name="message"></textarea>
+            <button class="w-full py-4 bg-white/5 border border-white/20 text-white font-title font-bold rounded-custom hover:bg-brand hover:text-black transition-all" type="submit">
+              SEND_TRANSMISSION
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="py-12 bg-cyber-black border-t border-white/5">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="text-gray-500 font-mono text-[10px] tracking-widest">
+        © 2024 CYBER_CORE // ALL RIGHTS RESERVED. ENCRYPTED_SITE_V1.0
+      </div>
+      <div class="flex gap-6">
+        <a class="text-white/40 hover:text-brand transition-colors" href="https://soundcloud.com/cybercore" target="_blank" rel="noopener">SOUNDCLOUD</a>
+<a class="text-white/40 hover:text-brand transition-colors" href="https://open.spotify.com/artist/REPLACE_ME" target="_blank" rel="noopener">SPOTIFY</a>
+<a class="text-white/40 hover:text-brand transition-colors" href="https://instagram.com/cybercore_dj" target="_blank" rel="noopener">INSTAGRAM</a>
+<a class="text-white/40 hover:text-brand transition-colors" href="https://twitch.tv/cybercore" target="_blank" rel="noopener">TWITCH</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // Redirect após login do Netlify Identity (necessário pro CMS)
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

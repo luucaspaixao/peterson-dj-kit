@@ -1,0 +1,12 @@
+{
+  "name": "dj-press-kit",
+  "version": "1.0.0",
+  "description": "DJ Digital Press Kit com Decap CMS",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx serve dist"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

@@ -1,0 +1,122 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Onde as imagens enviadas pelo admin são salvas
+media_folder: "public/images"
+public_folder: "/images"
+
+# Desabilita o editor de markdown rico (conteúdo é texto simples)
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  # ═══════════════════════════════════════════
+  # CONFIGURAÇÕES GERAIS DO SITE
+  # ═══════════════════════════════════════════
+  - name: "settings"
+    label: "⚙️ Configurações do Site"
+    files:
+      - name: "general"
+        label: "Geral (Hero + Footer)"
+        file: "src/content/site-content.json"
+        description: "Edite todo o conteúdo do site aqui"
+        fields:
+          # ── HERO / SITE ──
+          - label: "🏠 Site / Hero"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Nome Artístico", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Badge (texto pequeno acima do nome)", name: "badge", widget: "string" }
+              - { label: "Botão Principal (texto)", name: "hero_cta_primary", widget: "string" }
+              - { label: "Botão Secundário (texto)", name: "hero_cta_secondary", widget: "string" }
+              - { label: "BPM Display", name: "bpm_display", widget: "string" }
+
+          # ── SOBRE / BIO ──
+          - label: "👤 Sobre (Bio)"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Título da Seção", name: "section_title", widget: "string" }
+              - { label: "Foto do DJ", name: "photo", widget: "image" }
+              - { label: "Bio - Parágrafo 1", name: "bio_paragraph_1", widget: "text" }
+              - { label: "Bio - Parágrafo 2", name: "bio_paragraph_2", widget: "text" }
+              - label: "Gêneros Musicais"
+                name: "genres"
+                widget: "list"
+                field: { label: "Gênero", name: "genre", widget: "string" }
+
+          # ── RELEASES / MÚSICA ──
+          - label: "🎵 Releases"
+            name: "releases"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.year}})"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - label: "Tipo"
+                name: "type"
+                widget: "select"
+                options: ["EP", "SINGLE", "REMIX", "ALBUM", "MIXTAPE"]
+              - { label: "Ano", name: "year", widget: "string" }
+              - { label: "Gravadora / Label", name: "label", widget: "string" }
+              - { label: "Capa", name: "cover", widget: "image" }
+              - { label: "Link Spotify", name: "spotify_url", widget: "string", required: false }
+              - { label: "Link SoundCloud", name: "soundcloud_url", widget: "string", required: false }
+
+          # ── GALERIA ──
+          - label: "📸 Galeria de Fotos"
+            name: "gallery"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Foto", name: "image", widget: "image" }
+              - { label: "Legenda / Metadata", name: "caption", widget: "string" }
+
+          # ── VÍDEOS ──
+          - label: "🎬 Vídeos"
+            name: "videos"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "URL do YouTube", name: "youtube_url", widget: "string" }
+
+          # ── PRESS KIT ──
+          - label: "📦 Press Kit"
+            name: "press_kit"
+            widget: "object"
+            fields:
+              - { label: "Descrição", name: "description", widget: "text" }
+              - { label: "Arquivo EPK (ZIP)", name: "epk_file", widget: "file", required: false }
+              - { label: "Tech Rider (PDF)", name: "tech_rider_file", widget: "file", required: false }
+              - { label: "Video Reel (MP4)", name: "video_reel_file", widget: "file", required: false }
+
+          # ── CONTATO ──
+          - label: "📧 Contato / Booking"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Texto de Introdução", name: "intro", widget: "text" }
+              - { label: "Email de Booking", name: "email", widget: "string" }
+              - { label: "Instagram @", name: "instagram", widget: "string" }
+
+          # ── REDES SOCIAIS ──
+          - label: "🔗 Links das Redes Sociais"
+            name: "social_links"
+            widget: "object"
+            fields:
+              - { label: "SoundCloud URL", name: "soundcloud", widget: "string", required: false }
+              - { label: "Spotify URL", name: "spotify", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "Twitch URL", name: "twitch", widget: "string", required: false }
+
+          # ── FOOTER ──
+          - label: "📋 Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Texto de Copyright", name: "copyright", widget: "string" }
