@@ -15,7 +15,7 @@
     "tagline": "\"Proporcionar uma experiência de imersão sonora única, unindo técnica refinada e sensibilidade artística para transformar cada set em um momento memorável de conexão entre o público e a música eletrônica.\"",
     "badge": " ",
     "hero_cta_primary": "Mídias",
-    "hero_cta_secondary": "PressKit",
+    "hero_cta_secondary": "!Presskit",
     "bpm_display": "128.00"
   },
   "releases": [],
@@ -42,18 +42,18 @@
   ],
   "videos": [
     {
-      "thumbnail": "https://i.ytimg.com/vi/2UCBbcBT5Es/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCVK9B2CyLEelcT93OYkHsJTBigkg",
-      "title": "Rüfüs Du Sol Sunset Mix on the Desert",
-      "youtube_url": "https://www.youtube.com/watch?v=2UCBbcBT5Es"
+      "thumbnail": "https://www.youtube.com/shorts/wcEflu3c_p4",
+      "title": " ",
+      "youtube_url": " "
     }
   ],
   "press_kit": {
     "description": " ",
-    "epk_file": "",
-    "tech_rider_file": "",
-    "video_reel_file": ""
+    "epk_file": "/downloads/EPK_ASSETS.zip",
+    "tech_rider_file": "/downloads/TECH_RIDER.pdf",
+    "video_reel_file": "/downloads/VIDEO_REEL.mp4"
   },
   "footer": {
-    "copyright": "© 2026 DJ PETER SON // Feito por @luucaspaixao"
+    "copyright": "© 2024 CYBER_CORE // ALL RIGHTS RESERVED. ENCRYPTED_SITE_V1.0"
   }
 }
