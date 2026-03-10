@@ -2,15 +2,15 @@ backend:
   name: git-gateway
   branch: main
 
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: drrp2fwaz
-    api_key: 754411892574486
+# media_library:
+#   name: cloudinary
+#   config:
+#     cloud_name: drrp2fwaz
+#     api_key: 754411892574486
 
 # Onde as imagens enviadas pelo admin são salvas
-# media_folder: "public/images"
-# public_folder: "/images"
+media_folder: "public/images"
+public_folder: "/images"
 
 # Desabilita o editor de markdown rico (conteúdo é texto simples)
 slug:
